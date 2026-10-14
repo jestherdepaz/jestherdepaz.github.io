@@ -743,7 +743,7 @@ function view(r) {
       .join('');
   if (k == 'projects') {
     const p = pj[Math.min(sp, pj.length - 1)];
-    return `<div class=set><div class=sl><h3>Projects</h3><div>${pj.map((x, i) => `<button data-p=${i} class="${i == sp ? 'on' : ''}">${esc(x.n)}</button>`).join('')}</div></div><div class=sr><h4 class=rv>${esc(p.n)}</h4><p class="st rv">${esc([p.short, p.status].filter(Boolean).join(' · '))}</p>${(p.d || []).map((x) => `<p class=rv>${esc(x)}</p>`).join('')}${p.stack && p.stack.length ? `<div class="gt rv">Built with</div><div class="chips rv" style="--c:${p.c}">${p.stack.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}${p.url ? `<a class="btn rv" href="${esc(p.url)}" target=_blank rel=noopener>View project</a>` : ''}</div></div>`;
+    return `<div class=set><div class=sl><h3 class="rv sl-item">Projects</h3><div>${pj.map((x, i) => `<button data-p=${i} class="rv sl-item ${i == sp ? 'on' : ''}">${esc(x.n)}</button>`).join('')}</div></div><div class=sr><h4 class=rv>${esc(p.n)}</h4><p class="st rv">${esc([p.short, p.status].filter(Boolean).join(' · '))}</p>${(p.d || []).map((x) => `<p class=rv>${esc(x)}</p>`).join('')}${p.stack && p.stack.length ? `<div class="gt rv">Built with</div><div class="chips rv" style="--c:${p.c}">${p.stack.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}${p.url ? `<a class="btn rv" href="${esc(p.url)}" target=_blank rel=noopener>View project</a>` : ''}</div></div>`;
   }
 
   if (k == 'experience')
@@ -769,20 +769,34 @@ function turn(list, k) {
   const [a, b, ms, ez, st] = TC[k];
   return Promise.all(
     list.map((el, i) => {
+      const sidebar = el.classList.contains('sl-item');
+      const sidebarIndex = sidebar
+        ? [...el.closest('.sl').querySelectorAll('.sl-item')].indexOf(el)
+        : -1;
+      const from = sidebar
+        ? k == 'out'
+          ? 'translateX(0)'
+          : 'translateX(-40px)'
+        : P(a);
+      const to = sidebar
+        ? k == 'out'
+          ? 'translateX(-40px)'
+          : 'translateX(0)'
+        : P(b);
       const kf =
         k == 'out'
           ? [
-              { transform: P(a), opacity: 1, transformOrigin: O },
-              { transform: P(b), opacity: 0, transformOrigin: O },
+              { transform: from, opacity: 1, transformOrigin: O },
+              { transform: to, opacity: 0, transformOrigin: O },
             ]
           : [
-              { transform: P(a), opacity: 0, transformOrigin: O },
+              { transform: from, opacity: 0, transformOrigin: O },
               { opacity: 1, offset: 0.3, transformOrigin: O },
-              { transform: P(b), opacity: 1, transformOrigin: O },
+              { transform: to, opacity: 1, transformOrigin: O },
             ];
       const x = el.animate(kf, {
         duration: ms,
-        delay: Math.min(i * st, 650),
+        delay: sidebarIndex >= 0 ? sidebarIndex * 70 : Math.min(i * st, 650),
         easing: ez,
         fill: 'both',
       });
