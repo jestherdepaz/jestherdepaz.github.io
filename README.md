@@ -1,3 +1,3 @@
 # jestherdepazz.github.io
-this is my cv for jobseeking purposes
+My Website containing my info
 
