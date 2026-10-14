@@ -1,37 +1,878 @@
-﻿<html>
-	<head>
-		<title>Expert LLC</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<meta name="google-site-verification" content="cbdJl3gxqz-ixYhW1Im7xmPMQpoQ13Nle7H8VTZHnHQ" />
-		<link rel="stylesheet" href="style.css" type="text/css">
-		<link rel="shortcut icon" href="/Favicon.ico" type="image/x-icon" /> 
-	</head>
-	<body>
-		<div class="topnavbar">
-			<div class="leftbar">
-			<p>Expert Corporation</p>
-			</div>
-			<div class="rightbar">
-			<a class="navde" href="index.html">Home</a>
-			<a class="navd" href="#">Info</a>
-			<a class="navd" href="#">Contacts</a>
-			<a class="navd" href="#">???</a>
-			</div>
-		</div>
-		</br>
-		<div class="body">
-		<br>
-		<iframe width="40%" height="40%" src="https://www.youtube.com/embed/AEVaK0e1kTE?rel=0&autohide=1&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<p class="revamp">Video Test with this song by Unknown Brain lol</p>
-		<p class="spartan">P.S i'm just a solo web developer, not a full company lol</p>
-		</div>
-		
-		<div class="bottom">
-		<hr class="lol">
-		<p>© 2020 EXPERT Corporation © 2021 Github, inc. All Rights Reserved.</p>
-		<p>This website is powered by <a href="http://pages.github.com">Github Pages</a></p>
-		</div>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jesther Aldrie De Paz</title>
+<meta name="description" content="My CV for jobseeking purposes">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap">
+<style>
+:root {
+  --u: 88px;
+  --bg: #fff;
+  --fg: #000;
+  --mut: #555;
+  --line: #0002;
+  --a: #0050ef;
+  --f: "Segoe UI", "Selawik", "Open Sans", sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  background: var(--bg);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1d;
+    --fg: #fff;
+    --mut: #aaa;
+    --line: #fff3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1d;
+  --fg: #fff;
+  --mut: #aaa;
+  --line: #fff3;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 300 18px/1.6 var(--f);
+}
+.w {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 64px);
+}
+nav {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 16px 0 4px;
+}
+nav a {
+  flex: none;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 20px;
+  opacity: 0.45;
+  transition: opacity 0.2s;
+}
+nav a:hover,
+nav a.on {
+  opacity: 1;
+}
+#screen {
+  min-height: 70vh;
+  padding-bottom: 30px;
+}
+.hero {
+  padding: 9vh 0 3vh;
+}
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 1rem;
+}
+.profile-avatar {
+  width: clamp(200px, 11vw, 160px);
+  height: clamp(200px, 11vw, 160px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, #0050ef, #00aba9);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.profile-fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #0050ef, #00aba9);
+}
+.profile-avatar.has-fallback .profile-fallback {
+  display: flex;
+}
+.profile-avatar.has-fallback img {
+  display: none;
+}
+h1 {
+  font-weight: 200;
+  font-size: clamp(52px, 11vw, 128px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.15em;
+}
+.role {
+  font-size: clamp(22px, 3vw, 32px);
+  color: var(--a);
+  margin: 0 0 18px;
+}
+.hero p {
+  max-width: 560px;
+  color: var(--mut);
+  margin: 0 0 0.8em;
+}
+h2 {
+  font-weight: 200;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 5vh 0 0.4em;
+}
+.gt {
+  font: 200 28px var(--f);
+  margin: 18px 0 10px;
+}
+.wp.ph {
+  grid-template-columns: repeat(4, var(--u));
+  width: calc(4 * var(--u) + 18px);
+  margin: 0 auto 6px;
+}
+.dv {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: calc(4 * var(--u) + 18px);
+  margin: 26px auto 10px;
+  font: 300 20px var(--f);
+  color: var(--mut);
+}
+.dv::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.set {
+  display: flex;
+  gap: 40px;
+  background: #1d1d1d;
+  color: #fff;
+  max-width: 940px;
+  margin: 3vh auto 30px;
+  padding: 36px 40px;
+  min-height: 60vh;
+}
+.sl {
+  width: 230px;
+  flex: none;
+}
+.sl h3 {
+  font: 200 30px var(--f);
+  margin: 0 0 22px;
+}
+.sl button {
+  display: block;
+  background: none;
+  border: 0;
+  color: #999;
+  font: 300 20px var(--f);
+  padding: 6px 0;
+  cursor: pointer;
+  text-align: left;
+}
+.sl button:hover {
+  color: #ddd;
+}
+.sl button.on {
+  color: #fff;
+}
+.sr p {
+  color: #ddd;
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 560px;
+  margin: 0 0 0.9em;
+}
+.sr p.st {
+  color: #999;
+  font-size: 15px;
+  margin: -10px 0 18px;
+}
+.sr .gt {
+  color: #fff;
+  font-size: 22px;
+}
+.sr .btn {
+  border-color: #fff;
+  color: #fff;
+}
+.sr .btn:hover {
+  background: #fff;
+  color: #1d1d1d;
+}
+.sr {
+  flex: 1;
+  min-width: 0;
+}
+.sr h4 {
+  font: 200 42px/1.1 var(--f);
+  margin: 0 0 22px;
+}
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 9px 0;
+}
+.row i {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  background: var(--c);
+  display: grid;
+  place-items: center;
+  font: 200 18px var(--f);
+  font-style: normal;
+}
+.row b {
+  display: block;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.row small {
+  display: block;
+  color: #999;
+  font-size: 14px;
+}
+/* if u see dis whats up */
+.wp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--u));
+  grid-auto-columns: var(--u);
+  grid-auto-rows: var(--u);
+  grid-auto-flow: dense;
+  gap: 6px;
+  justify-content: start;
+  margin: 3vh 0 30px;
+}
+.t {
+  position: relative;
+  display: block;
+  grid-column: span 2;
+  grid-row: span 2;
+  background: var(--c);
+  color: #fff;
+  text-decoration: none;
+  perspective: 800px;
+  transition: transform 0.12s;
+}
+.t.s {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.t.w {
+  grid-column: span 4;
+}
+.t.l {
+  grid-column: span 4;
+  grid-row: span 4;
+}
+.in {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+.flip .in {
+  transform: rotateX(180deg);
+}
+.f {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--c);
+}
+.f2 {
+  transform: rotateX(180deg);
+  background: color-mix(in srgb, var(--c) 78%, #000);
+}
+.f1.has-image {
+  padding: 0;
+  background: var(--c);
+}
+.tile-logo {
+  display: block;
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+  padding: 0;
+  margin: auto;
+  background: transparent;
+}
+.tile-logo.full {
+  width: 100%;
+  height: 100%;
+}
+.f1.has-image .g {
+  display: none;
+}
+.f1.fallback .g {
+  display: grid;
+}
+.f1.fallback .tile-logo {
+  display: none;
+}
+.g {
+  position: absolute;
+  inset: 0 0 18px;
+  display: grid;
+  place-items: center;
+  font: 200 clamp(28px, calc(var(--u) * 0.55), 48px)/1 var(--f);
+}
+.s .g {
+  inset: 0;
+  font-size: calc(var(--u) * 0.34);
+}
+.n {
+  position: relative;
+  font-size: clamp(10px, calc(var(--u) * 0.16), 16px);
+  line-height: 1.2;
+}
+.n2 {
+  font-size: clamp(11px, calc(var(--u) * 0.18), 18px);
+  line-height: 1.3;
+}
+.t h3 {
+  font: 300 28px/1.15 var(--f);
+  margin: 0 0 4px;
+}
+.t p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: 0.93;
+}
+.t small {
+  opacity: 0.8;
+  font-size: 13px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 640px;
+  margin: 8px 0 18px;
+}
+.chips span {
+  background: var(--c);
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 15px;
+}
+.lead {
+  max-width: 640px;
+  font-size: 19px;
+  margin: 0 0 1em;
+}
+.bk {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--fg);
+  border-radius: 50%;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 3vh;
+}
+.btn {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 2px solid var(--fg);
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+.btn:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+.item {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  max-width: 720px;
+}
+.item h3 {
+  font: 400 22px/1.3 var(--f);
+  margin: 0;
+}
+.item .when {
+  color: var(--mut);
+  font-size: 15px;
+  margin: 2px 0 8px;
+}
+.item ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--mut);
+}
+footer {
+  margin-top: 6vh;
+  padding: 28px 0 44px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--mut);
+  font-size: 15px;
+}
+:focus-visible {
+  outline: 2px solid var(--a);
+  outline-offset: 3px;
+}
+@media (max-width: 480px) {
+  :root {
+    --u: 72px;
+  }
+  .hero {
+    padding-top: 5vh;
+  }
+  .profile-header {
+    margin-bottom: 0.75rem;
+  }
+  .profile-avatar {
+    width: 82px;
+    height: 82px;
+  }
+  .h1 {
+    font-size: clamp(40px, 14vw, 60px);
+  }
+}
+@media (max-width: 360px) {
+  :root {
+    --u: 64px;
+  }
+  .profile-avatar {
+    width: 72px;
+    height: 72px;
+  }
+}
+@media (max-width: 700px) {
+  .set {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  .sl {
+    width: auto;
+  }
+  .sl div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="w">
+<nav id="nav" aria-label="Sections"></nav>
+<main id="screen"></main>
+<footer><span id="copy"></span></footer>
+</div>
 
-	</body>
+<script>
+/* ==========================================================================
+   	All of the site's content lives in this block.
+   - To REMOVE something, delete its { ... } line.
+   - To ADD something, copy a line and change it. Keep the commas.
+   - Leave a list empty ([]) or a link as '' and that part is hidden.
+   ========================================================================== */
+
+const ME = {
+  name: 'Jesther Aldrie T. De Paz',
+  role: 'Computer Engineering',
+  tagline: '4th Year Graduating Student.',
+  about:
+    'I am a 4th year student pursuing Computer Engineering at ICCT Colleges, Cainta, Philippines. I have a strong passion for technology and programming, and I am constantly seeking opportunities to enhance my skills and knowledge in the field. I am eager to contribute to innovative projects and collaborate with like-minded individuals.',
+  email: 'depazkulas29@gmail.com',
+  github: 'https://github.com/jestherdepaz',
+  linkedin: '',
+};
+
+/* SKILLS: grouped. Each group gets a divider line with its name, and one color.
+   group = name on the divider      c = group color (default: automatic)
+   Items: n = name (required)       t = fallback text on the tile if no given picture (default: first 2 letters)
+		  img = optional image URL for the tile (if not given, a fallback is used)	
+          s = size: 'm' medium (default), 'w' wide, 's' small
+          c = color for this tile only      note = text shown when the tile flips */
+const SKILLS = [
+  {
+    group: 'frontend',
+    items: [
+      {
+        n: 'React',
+        t: 'Re',
+        img: 'Logos/React-icon.svg',
+        note: 'an open-source, component-based front-end JavaScript library used for building interactive user interfaces for web and native applications.',
+      },
+      {
+        n: 'Electron JS',
+        t: 'E.JS',
+        img: 'Logos/Electron_Software_Framework_Logo.svg',
+        note: 'a framework for building cross-platform desktop applications with web technologies.',
+      },
+      {
+        n: 'JavaScript',
+        t: 'JS',
+        img: 'Logos/Unofficial_JavaScript_logo_2.svg',
+        fullImage: true,
+        note: 'a programming language that conforms to the ECMAScript specification.',
+      },
+      {
+        n: 'HTML',
+        t: 'HTML',
+        img: 'Logos/HTML5_logo_and_wordmark.svg',
+        note: 'the standard markup language for documents designed to be displayed in a web browser.',
+      },
+      {
+        n: 'CSS',
+        t: 'CSS',
+        img: 'Logos/CSS3_logo_and_wordmark.svg',
+        note: 'a style sheet language used for describing the presentation of a document written in HTML or XML.',
+      },
+    ],
+  },
+  {
+    group: 'backend',
+    items: [
+      {
+        n: 'C++',
+        t: 'C++',
+        img: 'Logos/ISO_C++_Logo.svg',
+        note: 'a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language.',
+      },
+      {
+        n: 'Java',
+        t: 'Java',
+        img: 'Logos/Java-Logo.svg',
+        note: 'a high-level, class-based, object-oriented programming language.',
+      },
+    ],
+  },
+];
+
+/* PROJECTS: names in the left list, details on the right.
+   n = name (shown in the left list)   short = one-line summary
+   d = description paragraphs   stack = list of tech   status = e.g. 'Live'
+   url = optional link to the project   c = color of the tech labels (default: automatic) */
+const PROJECTS = [
+  {
+    n: 'HotelM8',
+    short: 'Professional Hotel Management System',
+    status: 'Proof Of Concept',
+    d: [
+      'A Professional Hotel Management System built using Electron JS.',
+      'This was a project for completion of COEPRO19: Software Design (3/1). It was an electron app that i have uploaded in Github Pages',
+    ],
+    stack: ['Electron JS', 'Github Pages'],
+    url: 'hotelm8.github.io',
+  },
+  {
+    n: 'This site',
+    short: 'This site, replicating the Metro UI',
+    status: 'You are currently in it.',
+    d: [
+      'even though everybody hated it, I loved Windows 8, I grew up with it. so i tried replicating its UI in this website.',
+      'Plain HTML, CSS and JavaScript with no framework.',
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Web Animations API'],
+    url: '',
+  },
+];
+
+/* EXPERIENCE and EDUCATION: empty lists hide their screens. Example entries:
+   { role: 'Developer', org: 'Company', when: '2024 – now', points: ['What you did'] }
+   { degree: 'B.S Computer Engineering', school: 'University', when: '2020 – 2024' } */
+const EXPERIENCE = [
+  {
+    role: 'IT Intern',
+    org: 'Concentrix CVG Inc.',
+    when: 'August-November 2026',
+    points: [
+      'Assisted in troubleshooting and resolving technical issues for agents, set up and maintained hardware and software.',
+    ],
+  },
+  {
+    role: 'Encoder',
+    org: 'Sonia Fernandos Auto Supply',
+    when: 'January-May 2025',
+    points: [
+      'Assisted in data entry and inventory management for car parts and sales.',
+    ],
+  },
+];
+const EDUCATION = [
+  {
+    degree: 'B.S Computer Engineering',
+    school: 'ICCT Colleges Cainta Main Campus',
+    when: '2022 to 2026',
+  },
+  {
+    degree: 'Academic Track, STEM Srand',
+    school: 'Pamantasan ng Lungsod Ng Marikina Senior High School',
+    when: '2020 to 2022',
+  },
+  {
+    degree: 'Junior High School Student',
+    school: 'Concepcion Integrated School-Secondary Level',
+    when: '2016 to 2020',
+  },
+  {
+    degree: 'Elementary Student',
+    school: 'Malanday Elementary School',
+    when: '2010 to 2016',
+  },
+];
+
+/* ==========================================================================
+            The code below builds the site from the lists above.
+   ========================================================================== */
+
+const $ = (s) => document.querySelector(s),
+  $$ = (s) => [...document.querySelectorAll(s)];
+const PAL = [
+  '#0050ef',
+  '#00aba9',
+  '#d80073',
+  '#fa6800',
+  '#60a917',
+  '#6a00ff',
+  '#1ba1e2',
+  '#a20025',
+];
+const SKILL_COLORS = {
+  React: '#0050ef',
+  'Electron JS': '#2b5797',
+  JavaScript: '#ffc40d',
+  HTML: '#00aba9',
+  CSS: '#60a917',
+  'C++': '#d80073',
+  Java: '#F0A30A',
+};
+const esc = (t) =>
+  String(t).replace(
+    /[&<>"]/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c],
+  );
+const sk = SKILLS.map((g, i) => ({
+    ...g,
+    items: g.items.map((x) => ({
+      s: 'm',
+      c: x.c || SKILL_COLORS[x.n] || g.c || PAL[i % PAL.length],
+      t: x.n.slice(0, 2),
+      ...x,
+    })),
+  })),
+  nSk = sk.reduce((a, g) => a + g.items.length, 0);
+const pj = PROJECTS.map((x, i) => ({ s: 'm', c: PAL[(i * 3 + 2) % 8], ...x }));
+const CT = [
+  ['email', ME.email && 'mailto:' + ME.email, ME.email, '@'],
+  ['github', ME.github, ME.github.replace(/^https?:\/\//, ''), 'GH'],
+  ['linkedin', ME.linkedin, ME.linkedin.replace(/^https?:\/\//, ''), 'in'],
+].filter((x) => x[1]);
+const ORDER = ['home', 'skills', 'projects'].concat(
+  EXPERIENCE.length ? ['experience'] : [],
+  EDUCATION.length ? ['education'] : [],
+  CT.length ? ['contact'] : [],
+);
+const tile = (o) => {
+  const el = o.href ? 'a' : 'div';
+  const tileImg = o.img
+    ? `<img class="tile-logo${o.fullImage ? ' full' : ''}" src="${esc(o.img)}" alt="${esc(o.n)}" onerror="this.parentElement.classList.add('fallback');this.remove();">`
+    : '';
+  const fallbackText = o.g
+    ? `<span class=g>${esc(o.g)}</span>`
+    : `<span class=g>${esc((o.n || '').slice(0, 2).toUpperCase())}</span>`;
+  const faceContent = o.img
+    ? `${tileImg}${fallbackText}`
+    : o.h ||
+      `${o.g ? `<span class=g>${esc(o.g)}</span>` : ''}${o.s == 's' ? '' : `<span class=n>${esc(o.n)}</span>`}`;
+  return `<${el} class="t ${o.s || 'm'} rv" style="--c:${o.c}" ${o.href ? `href="${esc(o.href)}"` : ''} ${o.ext ? 'target=_blank rel=noopener' : ''} ${o.s == 's' ? `title="${esc(o.n)}" aria-label="${esc(o.n)}"` : ''}><div class=in><div class="f f1 ${o.img ? 'has-image' : ''}">${faceContent}</div>${o.note && o.s != 's' ? `<div class="f f2"><span class=n2>${esc(o.note)}</span></div>` : ''}</div></${el}>`;
+};
+function view(r) {
+  const [k, a] = r.split('/');
+  if (k == 'skills')
+    return sk
+      .map(
+        (g) =>
+          `<div class="dv rv">${esc(g.group)}</div><div class="wp ph">${g.items.map((x) => tile({ n: x.n, g: x.t, s: x.s, c: x.c, note: x.note, img: x.img, fullImage: x.fullImage })).join('')}</div>`,
+      )
+      .join('');
+  if (k == 'projects') {
+    const p = pj[Math.min(sp, pj.length - 1)];
+    return `<div class=set><div class=sl><h3>Projects</h3><div>${pj.map((x, i) => `<button data-p=${i} class="${i == sp ? 'on' : ''}">${esc(x.n)}</button>`).join('')}</div></div><div class=sr><h4 class=rv>${esc(p.n)}</h4><p class="st rv">${esc([p.short, p.status].filter(Boolean).join(' · '))}</p>${(p.d || []).map((x) => `<p class=rv>${esc(x)}</p>`).join('')}${p.stack && p.stack.length ? `<div class="gt rv">Built with</div><div class="chips rv" style="--c:${p.c}">${p.stack.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}${p.url ? `<a class="btn rv" href="${esc(p.url)}" target=_blank rel=noopener>View project</a>` : ''}</div></div>`;
+  }
+
+  if (k == 'experience')
+    return `<h2 class=rv>experience</h2>${EXPERIENCE.map((x) => `<div class="item rv"><h3>${esc(x.role)}, ${esc(x.org)}</h3><p class=when>${esc(x.when)}</p><ul>${(x.points || []).map((y) => `<li>${esc(y)}</li>`).join('')}</ul></div>`).join('')}`;
+  if (k == 'education')
+    return `<h2 class=rv>education</h2>${EDUCATION.map((x) => `<div class="item rv"><h3>${esc(x.degree)}, ${esc(x.school)}</h3><p class=when>${esc(x.when)}</p></div>`).join('')}`;
+  if (k == 'contact')
+    return `<div class="wp ph" style="margin-top:3vh">${CT.map((x, i) => tile({ n: x[2], g: x[3], s: 'm', c: ['#0050ef', '#647687', '#1ba1e2'][i], href: x[1], ext: x[0] != 'email' })).join('')}</div>`;
+  const hub = (r, c, g) => tile({ n: r, g, c, href: '#' + r });
+  return `<div class=hero><div class="profile-header rv"><div class="profile-avatar rv"><img src="profile-picture.jpg" alt="Profile picture" onload="this.parentElement.classList.remove('has-fallback');" onerror="this.parentElement.classList.add('has-fallback');this.style.display='none';"><span class="profile-fallback">JD</span></div></div><h1 class=rv>${esc(ME.name)}</h1><p class="role rv">${esc(ME.role)}</p><p class=rv>${esc(ME.tagline)}</p>${ME.about ? `<p class=rv>${esc(ME.about)}</p>` : ''}</div><div class=wp>${hub('skills', '#0050ef', nSk)}${hub('projects', '#d80073', pj.length)}${EXPERIENCE.length ? hub('experience', '#fa6800', EXPERIENCE.length) : ''}${EDUCATION.length ? hub('education', '#60a917', EDUCATION.length) : ''}${CT.length ? hub('contact', '#00aba9', '@') : ''}</div>`;
+}
+const rm = matchMedia('(prefers-reduced-motion:reduce)').matches,
+  IN = 'cubic-bezier(.1,.9,.2,1)',
+  O = '0 50%',
+  P = (r) => `perspective(900px) rotateY(${r}deg)`;
+const TC = {
+  out: [0, 50, 175, 'cubic-bezier(.7,0,1,.5)', 18],
+  in: [-80, 0, 420, IN, 38],
+  bin: [50, 0, 380, IN, 34],
+};
+function turn(list, k) {
+  if (rm || !list.length) return Promise.resolve();
+  const [a, b, ms, ez, st] = TC[k];
+  return Promise.all(
+    list.map((el, i) => {
+      const kf =
+        k == 'out'
+          ? [
+              { transform: P(a), opacity: 1, transformOrigin: O },
+              { transform: P(b), opacity: 0, transformOrigin: O },
+            ]
+          : [
+              { transform: P(a), opacity: 0, transformOrigin: O },
+              { opacity: 1, offset: 0.3, transformOrigin: O },
+              { transform: P(b), opacity: 1, transformOrigin: O },
+            ];
+      const x = el.animate(kf, {
+        duration: ms,
+        delay: Math.min(i * st, 650),
+        easing: ez,
+        fill: 'both',
+      });
+      return x.finished
+        .then(() => {
+          if (k != 'out') x.cancel();
+        })
+        .catch(() => {});
+    }),
+  );
+}
+let cur = null,
+  busy = false,
+  pend = null,
+  sp = 0;
+const idx = (r) => {
+  const k = r.split('/')[0];
+  return k == 'project' ? ORDER.indexOf('projects') + 0.5 : ORDER.indexOf(k);
+};
+async function go(r) {
+  if (idx(r) < 0) r = 'home';
+  if (r === cur) return;
+  if (busy) {
+    pend = r;
+    return;
+  }
+  busy = true;
+  if (r == 'projects' && cur != 'projects') sp = 0;
+  const sc = $('#screen'),
+    back = cur !== null && idx(r) < idx(cur);
+  if (cur !== null) await turn($$('#screen .rv'), 'out');
+  sc.innerHTML = view(r);
+  cur = r;
+  scrollTo(0, 0);
+  const k = r.split('/')[0],
+    nk = k == 'project' ? 'projects' : k;
+  $$('#nav a').forEach((a) => a.classList.toggle('on', a.dataset.id == nk));
+  document.title = k == 'home' ? ME.name : nk + ' – ' + ME.name;
+  await turn($$('#screen .rv'), back ? 'bin' : 'in');
+  busy = false;
+  if (pend) {
+    const p = pend;
+    pend = null;
+    go(p);
+  }
+}
+$('#nav').innerHTML = ORDER.map(
+  (id) => `<a href="#${id}" data-id="${id}">${id}</a>`,
+).join('');
+$('#copy').textContent = '© ' + new Date().getFullYear() + ' ' + ME.name;
+addEventListener('hashchange', () => go(location.hash.slice(1) || 'home'));
+go(location.hash.slice(1) || 'home');
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-p]');
+  if (b) {
+    if (busy || +b.dataset.p == sp) return;
+    sp = +b.dataset.p;
+    $('#screen').innerHTML = view('projects');
+    turn($$('#screen .sr .rv'), 'in');
+    return;
+  }
+  const t = e.target.closest('.t');
+  if (!t || !t.querySelector('.f2')) return;
+  t.classList.toggle('flip');
+});
+if (!rm)
+  (function live() {
+    const L = $$('#screen .t').filter((t) => t.querySelector('.f2'));
+    if (L.length && !busy)
+      L[Math.floor(Math.random() * L.length)].classList.toggle('flip');
+    setTimeout(live, 1300 + Math.random() * 1700);
+  })();
+let pr = null;
+const rel = () => {
+  if (pr) {
+    pr.style.transform = '';
+    pr = null;
+  }
+};
+addEventListener('pointerdown', (e) => {
+  const t = e.target.closest('.t');
+  if (!t || e.button) return;
+  const r = t.getBoundingClientRect(),
+    x = (e.clientX - r.left) / r.width - 0.5,
+    y = (e.clientY - r.top) / r.height - 0.5;
+  t.style.transform = `perspective(500px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg) scale(.96)`;
+  pr = t;
+});
+addEventListener('pointerup', rel);
+addEventListener('pointercancel', rel);
+</script>
+</body>
 </html>
-			
